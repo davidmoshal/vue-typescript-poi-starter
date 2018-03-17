@@ -30,7 +30,7 @@ templateCompiler: true
 
 3) Styles:
 
-a) Needed to let typescript know about styles: `global.d.ts`
+- a) Needed to let typescript know about styles: `global.d.ts`
 
 ```ts
 declare module '*.css'
@@ -38,7 +38,7 @@ declare module '*.less'
 declare module '*.scss'
 ```
 
-b) Needed to import less or scss file, using `@/`:
+- b) Needed to import less or scss file, using `@/`:
 
 ```ts
 import “@/style/style-file.less”
