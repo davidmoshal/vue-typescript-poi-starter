@@ -8,11 +8,19 @@ import "ag-grid/dist/styles/theme-dark.css";
 
 import "@/styles/style-a.less"
 import "@/styles/style-b.scss"
+import { store } from "./store"
 
 Vue.component('AgGridVue')
 
 new Vue({
   el: '#app',
+  store,
   render: h => h(App)
 })
+
+
+declare let module: any
+if( module.hot ){
+  module.hot.accept()
+}
 

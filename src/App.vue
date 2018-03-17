@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="white-font black-background heading">Test of Poi, Vue, Typescript, Less, Scss, Ag Grid</div>
-    <FilterExample></FilterExample>
+    <EventTable></EventTable>
   </div>
 </template>
 
 <script lang="ts">
   import Vue from 'vue'
   import { Component } from 'vue-property-decorator'
-  import FilterExample from './FilterExample.vue'
+  import EventTable from './EventTable.vue'
 
   @Component({
-    components: {FilterExample}
+    components: {EventTable}
   })
   export default class App extends Vue{
   }

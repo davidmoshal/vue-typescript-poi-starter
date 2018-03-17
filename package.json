@@ -17,9 +17,13 @@
   "dependencies": {
     "ag-grid": "^17.0.0",
     "ag-grid-vue": "^17.0.0",
-    "vue": "^2.5.16"
+    "lodash": "^4.17.5",
+    "vue": "^2.5.16",
+    "vuex": "^3.0.1",
+    "vuex-class": "^0.3.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.105",
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
     "node-sass": "^4.7.2",
