@@ -69,23 +69,41 @@ npm i \
  -D
 ```
 
-5) `poi.config.js`
 
-```js
-module.exports = {
-  entry: './src/index.ts',
-  templateCompiler: true,
-  presets: [
-    require('poi-preset-typescript')(/* options */),
-    // optional:
-    require('poi-preset-bundle-report')(),
-    require('poi-preset-webpackmonitor')()
-    
-  ]
-}
+5) DefinePlugin equivalent
+
+```ts
+// poi.config.js
+
+ define: {
+      IS_PRODUCTION: options.mode === 'production'
+    }
+
 ```
 
-6) Jest
+6) `poi.config.js`
+
+
+   
+```ts
+module.exports = options => {
+  return ({
+    entry: './src/index.ts',
+    templateCompiler: true,
+    presets: [
+      require('poi-preset-typescript')(/* options */),
+      require('poi-preset-bundle-report')(),
+      require('poi-preset-webpackmonitor')()
+    ],
+    define: {
+      IS_PRODUCTION: options.mode === 'production'
+    }
+  })
+}
+
+```
+
+7) Jest
 
 TODO
 

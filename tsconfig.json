@@ -3,7 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata"       : false,
     "experimentalDecorators"      : true,
-    "module"                      : "commonjs",
+    "module"                      : "es2015",
     "moduleResolution"            : "node",
     "pretty"                      : true,
     "sourceMap"                   : false,
