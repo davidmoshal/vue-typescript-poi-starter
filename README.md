@@ -26,7 +26,7 @@ declare module '*.vue' {
 ```js
 templateCompiler: true
 ```
-`
+
 
 3) Styles:
 
@@ -38,7 +38,7 @@ declare module '*.less'
 declare module '*.scss'
 ```
 
-b) Needed to import less or scss file, use:
+b) Needed to import less or scss file, using `@/`:
 
 ```ts
 import “@/style/style-file.less”
