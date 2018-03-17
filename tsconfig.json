@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata"       : false,
+    "experimentalDecorators"      : true,
+    "module"                      : "commonjs",
+    "moduleResolution"            : "node",
+    "pretty"                      : true,
+    "sourceMap"                   : false,
+    "strict"                      : false,
+    "target"                      : "es5"
+  }
+}
