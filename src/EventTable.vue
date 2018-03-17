@@ -52,7 +52,8 @@
           this.gridApi.ensureIndexVisible(arr.length - 1)
         })
       }
-    }
+
+     }
 </script>
 
 <style>
