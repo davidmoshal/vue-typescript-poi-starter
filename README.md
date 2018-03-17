@@ -60,6 +60,15 @@ npm i \
  -D 
 ```
 
+optional, but useful:
+
+```shell
+npm i \
+ poi-preset-bundle-report \
+ poi-preset-webpackmonitor \
+ -D
+```
+
 5) `poi.config.js`
 
 ```js
@@ -68,8 +77,10 @@ module.exports = {
   templateCompiler: true,
   presets: [
     require('poi-preset-typescript')(/* options */),
+    // optional:
     require('poi-preset-bundle-report')(),
     require('poi-preset-webpackmonitor')()
+    
   ]
 }
 ```
