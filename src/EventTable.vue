@@ -1,6 +1,6 @@
 <template>
     <div style="width: 900px;">
-        <ag-grid-vue style="width: 100%; height: 350px;"
+        <ag-grid-vue style="width: 100%; height: 250px;"
                      class="ag-dark"
                      :gridOptions="gridOptions"
                      :rowData="events">
@@ -13,7 +13,7 @@
     import { AgGridVue } from "ag-grid-vue";
     import Vue from "vue";
     import { Component, Watch } from 'vue-property-decorator'
-    import { State } from "vuex-class"
+    import { Getter } from "vuex-class"
 
     @Component({
       components: {
@@ -22,26 +22,24 @@
     })
     export default class EventTable extends Vue{
 
-      @State events: Array<{ timestamp: string }>
+      @Getter events: Array<{ timestamp: string }>
 
       gridApi: GridApi         = null
       gridOptions: GridOptions = null
 
+
       beforeMount(){
+
         this.gridOptions = <GridOptions>{
-          height     : 200,
-          columnDefs : this.createColumnDefs(),
+          columnDefs : [
+            {headerName: "Timestamps", field: "timestamp", width: 500},
+          ],
           onGridReady: ( params ) =>{
             this.gridApi = params.api
           }
         }
       }
 
-      createColumnDefs(){
-        return [
-          {headerName: "Timestamps", field: "timestamp", width: 500},
-        ];
-      }
 
       @Watch('events')
       on_event( arr, old ){
@@ -53,7 +51,7 @@
         })
       }
 
-     }
+    }
 </script>
 
 <style>
