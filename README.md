@@ -3,9 +3,9 @@ Purpose:
 
 Test repo to figure out optimal use of these technologies:
 
-- Poi  
-- Typescript
-- Vue
+- Poi V9 (webpack 3)
+- Typescript 2.7
+- Vue 
 - Jest
 - AgGrid
 - Less and Scss
