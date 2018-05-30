@@ -1,3 +1,6 @@
+
+Purpose:
+
 Test repo to figure out optimal use of these technologies:
 
 - Poi  
@@ -7,6 +10,8 @@ Test repo to figure out optimal use of these technologies:
 - AgGrid
 - Less and Scss
 
+2018-May-30:
+- this is the Poi V9 branch
 
 ## Notes:
 
