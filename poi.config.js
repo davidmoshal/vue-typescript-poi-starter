@@ -1,57 +1,54 @@
-const poi_preset_ts_forked = ({loaderOptions} = {}) => {
+// for POI v.10 (webpack 4):
 
-  return poi => {
-
-    //console.log({poi})
-
-    poi.extendWebpack(config => {
-
-      config.resolve.extensions
-        .add('.ts')
-        .add('.tsx')
-
-      config.module.rule('typescript')
-        .test(/\.tsx?$/)
-        .use('ts-loader')
-        .loader('ts-loader')
-        .options(
-          Object.assign({
-              appendTsSuffixTo: [/\.vue$/],
-              transpileOnly: true // used with ForkTsCheckerWebpackPlugin
-            },
-            loaderOptions
-          ))
-
-      config.module.rule('vue')
-        .use('vue-loader')
-        .tap(vueOptions => {
-          vueOptions.esModule = true
-          vueOptions.loaders.ts = [{
-            loader: 'ts-loader',
-            options: loaderOptions
-          }]
-          return vueOptions
-        })
-
-    })
-  }
-}
-
+const DEVELOPMENT_PORT = 8080;
 
 module.exports = options => {
-  return ({
-    entry: './src/index.ts',
-    templateCompiler: true,
-    presets: [
-      poi_preset_ts_forked(),
-      //require('poi-preset-typescript')(/* options */),
-      require('poi-preset-bundle-report')(),
-      require('poi-preset-webpackmonitor')()
+  console.log({options});
+
+  const is_development = options.mode === "development";
+  console.log({is_development});
+
+  // overrides to dist and homepage:
+  let {outDir, publicPath} = options;
+
+  const has_entry_file = (filename) =>
+    options.entry && options.entry[0] && (options.entry[0].indexOf(filename) > -1)
+
+  if (has_entry_file("x")) {
+    outDir = "dist/x";
+    publicPath = "/x/";
+  } // etc.
+
+  /////////////////// CONFIGURATION //////////////////////////
+
+  return {
+    outDir,
+    publicPath,
+    restartOnFileChanges: false,
+    vue: {
+      fullBuild: true // replaces templateCompiler: true,
+    },
+    port: DEVELOPMENT_PORT,
+    html: {
+      title: "poi-ts-vue-jest-example",
+      // favicon: "./src/assets/images/favicon.ico" // TODO: consider favicons-webpack-plugin
+    },
+    plugins: [
+      require('@poi/plugin-typescript')(/* options */),
+      //require('@poi/plugin-bundle-report')(),
+      //require('@poi/plugin-webpackmonitor')()
     ],
     define: {
-      IS_PRODUCTION: options.mode === 'production'
-    }
-  })
-}
-
-
+      IS_PRODUCTION: options.mode === "production",
+      BUILD_TIMESTAMP: JSON.stringify(new Date().toLocaleString())
+    },
+    sourceMap: is_development ?
+      // DEVELOPMENT:
+      "source-map" // for vscode chrome debugging
+      //'cheap-module-eval-source-map'
+      //'#eval-source-map'
+      // PRODUCTION:
+      // : "nosources-source-map";
+      : "source-map"
+  }
+};

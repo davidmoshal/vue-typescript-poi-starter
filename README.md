@@ -1,11 +1,13 @@
 
 Purpose:
 
+For Poi v.9 (webpack 3) see the V.9 branch.
+
 Test repo to figure out optimal use of these technologies:
 
-- Poi  
+- Poi V.10 (Webpack 4)
 - Typescript
-- Vue
+- Vue 2.5.16
 - Jest
 - AgGrid
 - Less and Scss

@@ -6,8 +6,8 @@ import {AgGridVue} from "ag-grid-vue";
 import "ag-grid/dist/styles/ag-grid.css";
 import "ag-grid/dist/styles/theme-dark.css";
 
-import "@/styles/style-a.less"
-import "@/styles/style-b.scss"
+import "@/client/styles/style-a.less"
+import "@/client/styles/style-b.scss"
 import { store } from "./store"
 
 Vue.component('AgGridVue')

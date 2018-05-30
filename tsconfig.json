@@ -1,13 +1,34 @@
 {
   "compilerOptions": {
+    //"allowJs": true,
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata"       : false,
-    "experimentalDecorators"      : true,
-    "module"                      : "es2015",
-    "moduleResolution"            : "node",
-    "pretty"                      : true,
-    "sourceMap"                   : false,
-    "strict"                      : false,
-    "target"                      : "es5"
-  }
+    "experimentalDecorators": true,
+    "lib"                         : [
+      "es2016",
+      "dom"
+    ],
+    "module": "es2015", // ? commonjs needed for the dev server? ie: -O '{"module":"commonjS"}'
+    "moduleResolution": "node",
+    "pretty": true,
+    "sourceMap": true,
+    "strict": false,
+    "target": "es5",
+    "baseUrl": "."
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
+  "exclude": [
+    ".cache-loader/",
+    ".git/",
+    ".idea/",
+    ".monitor/",
+    ".old/",
+    ".vscode/",
+    "dist/",
+    "node_modules/",
+    "static/"
+  ]
 }
