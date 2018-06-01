@@ -1,8 +1,6 @@
 
 Purpose:
 
-For Poi v.9 (webpack 3) see the V.9 branch.
-
 Test repo to figure out optimal use of these technologies:
 
 - Poi V.10 (Webpack 4)
@@ -11,6 +9,8 @@ Test repo to figure out optimal use of these technologies:
 - Jest
 - AgGrid
 - Less and Scss
+
+NB: For Poi v.9 (webpack 3) see the V.9 branch.
 
 
 ## Notes:
