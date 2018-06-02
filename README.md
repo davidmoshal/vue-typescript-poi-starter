@@ -58,10 +58,9 @@ npm i \
  less \
  less-loader \
  node-sass \
- poi-preset-typescript \
- sass-loader \
  typescript \
  vue-property-decorator \
+ @poi/plugin-typescript \
  -D 
 ```
 
@@ -69,8 +68,8 @@ optional, but useful:
 
 ```shell
 npm i \
- poi-preset-bundle-report \
- poi-preset-webpackmonitor \
+  @poi/plugin-bundle-report  \
+  @poi/plugin-webpackmonitor \
  -D
 ```
 
@@ -81,13 +80,12 @@ npm i \
 // poi.config.js
 
  define: {
-      IS_PRODUCTION: options.mode === 'production'
-    }
+    IS_PRODUCTION: options.mode === 'production'
+ }
 
 ```
 
 6) `poi.config.js`
-
 
    
 ```ts
@@ -101,12 +99,12 @@ module.exports = options => {
 
     templateCompiler: true,
 
-    presets: [
-      require('poi-preset-typescript')(/* options */),
-      require('poi-preset-bundle-report')(),
-      require('poi-preset-webpackmonitor')()
+    plugins: [
+      require('@poi/plugin-typescript')(/* options */),
+      require('@poi/plugin-bundle-report')(),
+      require('@poi/plugin-webpackmonitor')()
     ],
-
+    
     define: {
       IS_PRODUCTION: options.mode === 'production'
     }
