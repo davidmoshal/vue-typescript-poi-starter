@@ -40,7 +40,7 @@ declare module '*.vue' {
 - a) Needed to let typescript know about styles: `global.d.ts`
 
 ```ts
-// `global.d.ts
+// global.d.ts
 
 declare module '*.css'
 declare module '*.less'
