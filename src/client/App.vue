@@ -1,18 +1,14 @@
 <template>
   <div>
-    <div class="white-font black-background heading">Test of Poi, Vue, Typescript, Less, Scss, Ag Grid</div>
-    <EventTable></EventTable>
+    <div class="white-font black-background heading">Test of Poi, Vue, Typescript, Less, Scss</div>
   </div>
 </template>
 
 <script lang="ts">
   import Vue from 'vue'
   import { Component } from 'vue-property-decorator'
-  import EventTable from './EventTable.vue'
 
-  @Component({
-    components: {EventTable}
-  })
+  @Component
   export default class App extends Vue{
   }
 </script>

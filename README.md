@@ -7,7 +7,6 @@ Test repo to figure out optimal use of these technologies:
 - Typescript
 - Vue 2.5.16
 - Jest
-- AgGrid
 - Less and Scss
 
 NB: For Poi v.9 (webpack 3) see the V.9 branch.
@@ -26,14 +25,7 @@ declare module '*.vue' {
 }
 ```
 
-2) Needed to add the Vue template compiler to `poi.config.js`
-
-```js
-templateCompiler: true
-```
-
-
-3) Styles:
+2) Styles:
 
 - a) Needed to let typescript know about styles: `global.d.ts`
 
@@ -50,7 +42,7 @@ import “@/style/style-file.less”
 import “@/style/style-file.scss”
 ```
 
-4) Needed to add these to package.json
+3) Needed to add these to package.json
 
 
 ```shell
@@ -73,8 +65,7 @@ npm i \
  -D
 ```
 
-
-5) DefinePlugin equivalent
+4) DefinePlugin equivalent
 
 ```ts
 // poi.config.js
@@ -85,7 +76,7 @@ npm i \
 
 ```
 
-6) `poi.config.js`
+5) `poi.config.js`
 
    
 ```ts
@@ -115,7 +106,7 @@ module.exports = options => {
 
 ```
 
-7) Jest
+6) Jest
 
 TODO
 
