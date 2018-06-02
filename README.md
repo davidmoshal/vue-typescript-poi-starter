@@ -4,13 +4,20 @@ Purpose:
 Test repo to figure out optimal use of these technologies:
 
 - Poi V.10 (Webpack 4)
-- Typescript
+- Typescript (2.9.1)
 - Vue 2.5.16
 - Jest
 - Less and Scss
 
 NB: For Poi v.9 (webpack 3) see the V.9 branch.
 
+## Usage:
+
+```
+npm i
+npm dev
+npm build
+```
 
 ## Notes:
 
