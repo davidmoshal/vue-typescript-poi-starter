@@ -26,6 +26,9 @@ These are the magic incantations needed to go make Poi work for Vue, TS, Less, S
 1) Needed to add a `vue.shim.d.ts` to the /src folder so that Typescript knows about Vue files
  
 ```ts
+
+// vue.shim.d.ts
+
 declare module '*.vue' {
   import Vue from 'vue'
   export default Vue
@@ -37,6 +40,8 @@ declare module '*.vue' {
 - a) Needed to let typescript know about styles: `global.d.ts`
 
 ```ts
+// `global.d.ts
+
 declare module '*.css'
 declare module '*.less'
 declare module '*.scss'
@@ -45,12 +50,12 @@ declare module '*.scss'
 - b) Needed to import less or scss file, using `@/`:
 
 ```ts
+// typically in main.ts
 import “@/style/style-file.less”
 import “@/style/style-file.scss”
 ```
 
 3) Needed to add these to package.json
-
 
 ```shell
 npm i \
@@ -61,6 +66,7 @@ npm i \
  vue-property-decorator \
  @poi/plugin-typescript \
  -D 
+
 ```
 
 optional, but useful:
@@ -72,18 +78,7 @@ npm i \
  -D
 ```
 
-4) DefinePlugin equivalent
-
-```ts
-// poi.config.js
-
- define: {
-    IS_PRODUCTION: options.mode === 'production'
- }
-
-```
-
-5) `poi.config.js`
+4) `poi.config.js`
 
    
 ```ts
@@ -113,7 +108,7 @@ module.exports = options => {
 
 ```
 
-6) Jest
+5) Jest
 
 TODO
 
